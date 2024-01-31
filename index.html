@@ -358,33 +358,6 @@
     }
 }
 
-.app__navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
-
-.menu-icon {
-    display: none; /* Initially hide the menu icon */
-    font-size: 25px;
-    cursor: pointer;
-}
-
-/* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: 600px) {
-    /* ... (Existing styles) */
-
-    .app__navbar {
-        flex-direction: column;
-        align-items: flex-end; /* Align items to the right */
-    }
-
-    .menu-icon {
-        display: block; /* Display the menu icon on smaller screens */
-    }
-}
 
     </style>
 </head>
@@ -449,20 +422,19 @@
             <p>Email: <a href="mailto:kachitsaw1@gmail.com">kachitsaw1@gmail.com</a></p>
         </section>
         <!-- Add this div for the mobile menu -->
+        <div class="nav-overlay">
+            <nav id="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
 <div class="mobile-menu" id="mobileMenu">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
-</div>
-<div class="app__navbar">
-    <nav id="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
 </div>
 
 
@@ -510,10 +482,41 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.innerHTML = ''; // Clear the overlay content
     });
 });
+// Add this to your existing script
+function toggleNav() {
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    if (navOverlay.style.transform === 'translateX(-100%)') {
+        navOverlay.style.display = 'flex';
+        navOverlay.style.transform = 'translateX(0)';
+    } else {
+        navOverlay.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+            navOverlay.style.display = 'none';
+        }, 300); // Wait for the transition to complete before hiding the menu
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // ... (Your existing code)
+
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    // Close the menu when clicking outside of it
+    navOverlay.addEventListener('click', function () {
+        toggleNav();
+    });
+
+    // Prevent clicks inside the menu from closing it
+    navOverlay.querySelector('nav').addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
+});
+
 
         // JavaScript to handle scroll and update header background
         // Modify the existing toggleNav function
-function toggleNav() {
+/*function toggleNav() {
     const nav = document.getElementById('nav');
     const mobileMenu = document.getElementById('mobileMenu');
     
@@ -522,7 +525,8 @@ function toggleNav() {
     } else {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
     }
-}
+}*/
+
 
     </script>
 </body>
