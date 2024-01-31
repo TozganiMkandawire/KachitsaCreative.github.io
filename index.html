@@ -242,6 +242,53 @@ footer p {
         max-width: 100%;
     }
 }
+/* Add this at the end of your existing CSS */
+
+/* Menu icon for mobile */
+.menu-icon {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+}
+
+/* Display navigation links by default */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments for smaller screens (phones) */
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Display the menu icon on smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links in a column */
+        align-items: flex-end; /* Align to the right */
+        position: absolute;
+        top: 60px; /* Adjust as needed based on your header height */
+        right: 0;
+        background-color: rgba(119, 175, 197, 0.8);
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none; /* Hide by default on smaller screens */
+    }
+
+    nav a {
+        padding: 14px 20px;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    nav.show {
+        display: flex; /* Show the navigation links when the menu is clicked */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Reduce font size for "KachitsaCreatives" on phones */
+    }
+}
+
  </style>
 </head>
 
@@ -323,6 +370,16 @@ footer p {
                 header.style.backgroundColor = 'rgba(119, 175, 197, 0.8)'; /* Restore semi-transparent background */
             }
         };
+       
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+
+        menuIcon.addEventListener('click', function () {
+            nav.classList.toggle('show');
+        });
+    });
+
     </script>
 </body>
 
