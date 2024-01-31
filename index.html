@@ -33,7 +33,7 @@
         /* Additional styles for smaller screens (phones) */
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 1.2em; /* Adjust the font size for smaller screens */
+        font-size: 1.8em; /* Adjust the font size for smaller screens */
         margin-bottom: 20px; /* Added margin to push content down */
     }
 
@@ -52,7 +52,8 @@
         }
         h2 {
             font-family: montserrat;
-            font-size: 35px;
+            font-size: 40px;
+            font-style: italic;
         }
 
         h3 {
@@ -63,11 +64,11 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: right;
             padding: 1rem 2rem;
         }
         nav {
-            text-align: center;
+            text-align: right;
             padding: 0;
             margin: 0;
             overflow: hidden;
@@ -75,12 +76,12 @@
         nav a {
             display: inline-block;
             color: black; 
-            text-align: center;
+            text-align: right;
             padding: 14px 30px; /* increased padding for more space */
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 22px; /* slightly larger font size */
-            margin: 0 15px; /* increased margin for extra spacing */
+            margin: 0 50px; /* increased margin for extra spacing */
         }
         nav a:hover {
             background-color: #7ab8f5; /* lighter blue */
@@ -357,7 +358,48 @@
         margin-left: 10px; /* Add some margin to the left */
     }
 }
+/* ... (Previous styles) */
 
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.scroll-down-arrow {
+    width: 24px;
+    height: 24px;
+    border: solid #062d44;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+}
+
+/* ... (Previous styles) */
+
+.scroll-down-arrow {
+    width: 24px;
+    height: 24px;
+    border: solid #114d9b;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+    
+    animation: blink 1s infinite alternate; /* Added animation */
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.10;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
 
     </style>
 </head>
@@ -378,11 +420,16 @@
     </header>
     <section id="home" class="home-content">
         <div>
-            <h1>Hey, my name is <span style="font-size: 1.5em; font-weight: bold; font-family:montserrat;"><br>Wonderful<br>Kachitsa</span></h1>
+            <h1>Hey, my name is <span style="font-size: 2.0em; font-weight: bold; font-family:montserrat;"><br>Wonderful<br>Kachitsa</span></h1>
             <p>I am a photographer</p>
         </div>
         <!-- Add this to your existing HTML -->
         <div class="overlay"></div>
+        <!-- Add this to your existing HTML, at the end of the home section -->
+<div class="scroll-down-indicator">
+    <div class="scroll-down-arrow"></div>
+</div>
+
     </section>
     
     <section id="about">
@@ -488,6 +535,17 @@ function toggleNav() {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
     }
 }
+// Add this to your existing script
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
+
+    scrollDownIndicator.addEventListener('click', function () {
+        const aboutSection = document.getElementById('about');
+        aboutSection.scrollIntoView({
+            behavior: 'smooth',
+        });
+    });
+});
 
     </script>
 </body>
