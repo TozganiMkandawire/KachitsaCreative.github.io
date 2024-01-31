@@ -15,34 +15,49 @@
             padding: 0;
         }
         header {
-            background-color: rgba(119, 175, 197, 0.8); /* Semi-transparent blue */
+            background: rgba(255, 255, 255, 0.25);/* Semi-transparent blue */
             padding: 10px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             position: fixed;
             width: 100%;
-            top: 0;
-            z-index: 1000; /* Ensure the menu is on top */
+            top: 0; /* Ensure the menu is on top */
             transition: background-color 0.5s; /* Smooth transition for background color */
+            backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 2;
         }
         h1 {
             font-family: montserrat;
             margin-right: auto;
             margin-left: 10px;
-            font-size: 2em; /* Adjust the font size as needed */
+            font-size: 30m; /* Adjust the font size as needed */
             font-weight: bold;
             font-style: italic;
         }
         h2 {
             font-family: montserrat;
-            font-size: 45px;
+            font-size: 35px;
         }
 
         h3 {
             font-family: montserrat;
-            font-size: 40px;
+            font-size: 30px;
         }
+        .app__navbar {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  
+
+  
+}
         nav {
             text-align: center;
             padding: 0;
@@ -51,7 +66,7 @@
         }
         nav a {
             display: inline-block;
-            color: #ffffff; /* white */
+            color: black; 
             text-align: center;
             padding: 14px 30px; /* increased padding for more space */
             text-decoration: none;
@@ -99,7 +114,7 @@
         }
         p {
             font-family: montserrat;
-            font-size: 35px;
+            font-size: 30px;
         }
 
         /* Contact form styling */
@@ -266,12 +281,30 @@
         bottom: auto;
     }
 }
+/* Common styling for the entire website */
+body {
+    font-family: montserrat;
+    background-color: #f0f8ff; /* light blue */
+    color: #000000; /* black */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    margin: 10px; /* Center the container */
+    padding: 10px;
+}
+
+/* The rest of your existing styles */
+/* ... */
 
     
     </style>
 </head>
 
 <body>
+    <div class="container">
     <header>
         <h1>KachitsaCreatives</h1>
         <nav>
@@ -341,7 +374,7 @@
     <footer>
         <p>&copy; 2024 JoyTech Designs||Kachitsa Creatives</p>
     </footer>
-
+</div>
     <script>
         // Add this to your existing script
 document.addEventListener('DOMContentLoaded', function () {
@@ -365,14 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
         // JavaScript to handle scroll and update header background
-        window.onscroll = function () {
-            var header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.style.backgroundColor = 'rgba(119, 175, 197, 1)'; /* Change background color when scrolling */
-            } else {
-                header.style.backgroundColor = 'rgba(119, 175, 197, 0.8)'; /* Restore semi-transparent background */
-            }
-        };
+        
     </script>
 </body>
 
