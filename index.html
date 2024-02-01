@@ -129,8 +129,38 @@
         }
         p {
             font-family: montserrat;
-            font-size: 30px;
+            font-size: 25px;
         }
+        /* Add this to your existing styles */
+#about .container {
+    max-width: 800px; /* Adjust the max-width as needed */
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* Background color for the container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Adjusted margin for better spacing */
+}
+
+#about img {
+    width: 300px; /* Adjusted width as needed */
+    height: 300px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+#about p {
+    font-size: 20px;
+    color: #333;
+    margin-left: 20px; /* Adjusted margin for better spacing */
+}
+
 
         /* Contact form styling */
         form {
@@ -414,7 +444,7 @@
     <section id="home" class="home-content">
         <div>
             <h1>Hey, my name is <span style="font-size: 2.0em; font-weight: bold; font-family:montserrat;"><br>Wonderful<br>Kachitsa</span></h1>
-            <p>I am a photographer</p>
+            <p>I am a photographer based in Mzuzu</p>
         </div>
         <!-- Add this to your existing HTML -->
         <div class="overlay"></div>
@@ -426,11 +456,15 @@
     </section>
     
     <section id="about">
-        <h2>About Wonderful Kachitsa</h2>
-        <img src="w2.jpg" alt="Description" class="circular-image">
-
-        <p>Hello, I'm Wonderful Kachitsa, a photographer who sees the world through a unique lens, my camera lens. Through my creative vision, I transform ordinary moments into extraordinary visual stories. Blending artistry with technical expertise, I turn each frame into a canvas, capturing the beauty, emotions, and narratives that unfold within the click of my shutter. For me, photography is a journey where every image tells a tale of passion, creativity, and a profound connection with the art. Join me on this adventure, where ordinary moments become extraordinary masterpieces, and the world is seen through my eyes as an artist behind the camera.</p>
+        <div class="container">
+            <h2>About Wonderful Kachitsa</h2>
+            <div class="about-content">
+                <img src="w2.jpg" alt="Description" class="circular-image">
+                <p>I am a photographer who sees the world through a unique lens, my camera lens. Through my creative vision, I transform ordinary moments into extraordinary visual stories. Blending artistry with technical expertise, I turn each frame into a canvas, capturing the beauty, emotions, and narratives that unfold within the click of my shutter. For me, photography is a journey where every image tells a tale of passion, creativity, and a profound connection with the art. Join me on this adventure, where ordinary moments become extraordinary masterpieces, and the world is seen through my eyes as an artist behind the camera.</p>
+            </div>
+        </div>
     </section>
+    
 
     <section id="portfolio">
         <h2>Portfolio</h2>
@@ -458,7 +492,7 @@
         <h2>Contact</h2>
         <section class="contact-info">
             <p>Contact Wonderful Kachitsa:</p>
-            <p>Phone: <a href="tel:+265883096096">+265 883 09 60 96</a></p>
+           <p>Phone: <a href="https://wa.me/265883096096" target="_blank">+265 883 09 60 96 (WhatsApp)</a></p>
             <p>Email: <a href="mailto:kachitsaw1@gmail.com">kachitsaw1@gmail.com</a></p>
         </section>
         <!-- Add this div for the mobile menu -->
