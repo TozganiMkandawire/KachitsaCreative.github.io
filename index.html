@@ -367,7 +367,12 @@ r        };
     text-decoration: none;
     font-size: 18px;
     color: #000000;
+    left: -100%;
     transition: left 0.3s ease;
+}
+
+.mobile-menu.open {
+    left: 0;
 }
 
 .mobile-menu a:hover {
@@ -569,20 +574,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (window.innerWidth <= 600) {
-        if (mobileMenu.style.left === '0%' || mobileMenu.style.left === '') {
-            mobileMenu.style.transition = 'left 0.3s ease'; // Add a transition for a smooth effect
-            mobileMenu.style.left = '-100%';
+        if (mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
         } else {
-            mobileMenu.style.transition = 'left 0.3s ease';
-            mobileMenu.style.left = '0%';
+            mobileMenu.classList.add('open');
         }
     } else {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
-        // Close the mobile menu if it's open
-        mobileMenu.style.transition = 'left 0.3s ease';
-        mobileMenu.style.left = '-100%';
+        mobileMenu.classList.remove('open');
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
