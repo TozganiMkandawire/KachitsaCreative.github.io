@@ -340,7 +340,7 @@ r        };
                 bottom: auto;
             }
             
-        }
+        
         .circular-image {
     max-width: 100%;
     height: auto;
@@ -563,14 +563,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // JavaScript to handle scroll and update header background
         // Modify the existing toggleNav function
-function toggleNav() {
+        function toggleNav() {
     const nav = document.getElementById('nav');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (window.innerWidth <= 600) {
         mobileMenu.style.left = mobileMenu.style.left === '0%' || mobileMenu.style.left === '' ? '-100%' : '0%';
     } else {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
+        // Close the mobile menu if it's open
+        mobileMenu.style.left = '-100%';
     }
 }
 
