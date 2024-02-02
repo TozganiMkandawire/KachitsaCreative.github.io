@@ -550,6 +550,7 @@ function toggleNav() {
 document.addEventListener('DOMContentLoaded', function () {
     const overlay = document.querySelector('.overlay');
     const galleryImages = document.querySelectorAll('.gallery img');
+    const mobileMenu = document.getElementById('mobileMenu');
 
     galleryImages.forEach(function (image) {
         image.addEventListener('click', function () {
@@ -565,8 +566,15 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.style.display = 'none';
         overlay.innerHTML = ''; // Clear the overlay content
     });
-});
 
+    // Close mobile menu when clicking anywhere outside of it
+    document.addEventListener('click', function (event) {
+        if (event.target !== mobileMenu && !mobileMenu.contains(event.target)) {
+            mobileMenu.style.transition = 'left 0.3s ease';
+            mobileMenu.style.left = '-100%';
+        }
+    });
+});
         // JavaScript to handle scroll and update header background
         // Modify the existing toggleNav function
         function toggleNav() {
