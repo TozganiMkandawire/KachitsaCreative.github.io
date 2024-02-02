@@ -568,10 +568,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (window.innerWidth <= 600) {
-        mobileMenu.style.left = mobileMenu.style.left === '0%' || mobileMenu.style.left === '' ? '-100%' : '0%';
+        if (mobileMenu.style.left === '0%' || mobileMenu.style.left === '') {
+            mobileMenu.style.transition = 'left 0.3s ease'; // Add a transition for a smooth effect
+            mobileMenu.style.left = '-100%';
+        } else {
+            mobileMenu.style.transition = 'left 0.3s ease';
+            mobileMenu.style.left = '0%';
+        }
     } else {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
         // Close the mobile menu if it's open
+        mobileMenu.style.transition = 'left 0.3s ease';
         mobileMenu.style.left = '-100%';
     }
 }
