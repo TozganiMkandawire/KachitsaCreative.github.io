@@ -31,18 +31,6 @@
         }
 
         /* Additional styles for smaller screens (phones) */
-        @media only screen and (max-width: 480px) {
-    #about img.circular-image {
-        width: 100%; /* Set the image width to 100% of the container */
-        max-width: 300px; /* Limit the maximum width of the image */
-        height: auto; /* Maintain the aspect ratio */
-        border-radius: 50%; /* Keep the circular shape */
-    }
-
-    #about .about-content {
-        text-align: center; /* Center text on smaller screens */
-    }
-}
 
 @media only screen and (max-width: 480px) {
     h1 {
@@ -52,6 +40,16 @@
 
     h2, h3, p {
         font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+    #about img.circular-image {
+        width: 100%; /* Set the image width to 100% of the container */
+        max-width: 300px; /* Limit the maximum width of the image */
+        height: auto; /* Maintain the aspect ratio */
+        border-radius: 50%; /* Keep the circular shape */
+    }
+
+    #about .about-content {
+        text-align: center; /* Center text on smaller screens */
     }
 }
 
@@ -294,13 +292,7 @@ r        };
                 margin-left: 5px;
             }
 
-            nav {
-                flex-direction: column;
-                align-items: center;
-                display: none; /* Hide the navigation links on smaller screens by default */
-            }
-
-           
+          
 
             .menu-icon {
                 display: block; /* Display the menu icon on smaller screens */
