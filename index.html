@@ -565,45 +565,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // JavaScript to handle scroll and update header background
         // Modify the existing toggleNav function
-        function toggleNav() {
-        const nav = document.getElementById('nav');
-        const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
 
-        if (window.innerWidth <= 600) {
-            // If the screen width is smaller or equal to 600px
-            // Toggle the mobile menu by changing its left position
-            mobileMenu.style.left = mobileMenu.style.left === '0%' || mobileMenu.style.left === '' ? '-100%' : '0%';
-        } else {
-            // For larger screens, toggle the regular navigation menu
-            nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
-        }
-    }
-
-    // Function to handle smooth scrolling when clicking the scroll down indicator
-    document.addEventListener('DOMContentLoaded', function () {
-        const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
-
-        scrollDownIndicator.addEventListener('click', function () {
-            const aboutSection = document.getElementById('about');
-            aboutSection.scrollIntoView({
-                behavior: 'smooth',
-            });
+    scrollDownIndicator.addEventListener('click', function () {
+        const aboutSection = document.getElementById('about');
+        aboutSection.scrollIntoView({
+            behavior: 'smooth',
         });
     });
-
-    // Function to handle closing the mobile menu when a menu item is clicked
-    document.addEventListener('DOMContentLoaded', function () {
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-
-        mobileMenuLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                const mobileMenu = document.getElementById('mobileMenu');
-                mobileMenu.style.left = '-100%'; // Hide the mobile menu after clicking a menu item
-            });
-        });
-    });
-
-    
+});
 
 
 
