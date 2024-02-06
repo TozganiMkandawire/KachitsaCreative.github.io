@@ -31,7 +31,7 @@
         }
 
         /* Additional styles for smaller screens (phones) */
-        @media only screen and (max-width: 1000px) {
+        @media only screen and (max-width: 480px) {
     #about img.circular-image {
         width: 100%; /* Set the image width to 100% of the container */
         max-width: 300px; /* Limit the maximum width of the image */
@@ -44,7 +44,7 @@
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 480px) {
     h1 {
         font-size: 24px; /* Adjust the font size for smaller screens */
         margin-bottom: 20px; /* Added margin to push content down */
@@ -282,7 +282,7 @@ r        };
             transform: scale(1.1);
         }
         /* Responsive Styles */
-        @media only screen and (max-width: 1000px) {
+        @media only screen and (max-width: 480px) {
             header {
                 padding: 5px;
                 flex-direction: column;
@@ -355,15 +355,16 @@ r        };
 /*sliding-in menu */
 .mobile-menu {
     position: fixed;
-    top: 0;
-    right: -100%; /* Initially position it off-screen to the right */
-    height: 100%;
-    width: 70%; /* Adjust the width of the menu as needed */
+    top: calc(100% + 10px); /* Position it below the menu icon */
+    right: 0;
+    height: auto;
+    width: 70%;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+    transition: top 0.3s ease; /* Smooth transition for sliding effect */
     z-index: 3;
 }
+
 
 .mobile-menu a {
     display: block;
@@ -389,7 +390,7 @@ r        };
 }
 
 /* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: spx) {
     /* ... (Existing styles for smaller screens) */
 
     /* Display the menu icon on smaller screens */
@@ -574,7 +575,23 @@ function toggleNav() {
         nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
     }
 }
+overlay.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        overlay.innerHTML = ''; // Clear the overlay content
+    });
 
+    // Toggle mobile menu when clicking the menu icon
+    menuIcon.addEventListener('click', function () {
+        const menuClosed = mobileMenu.style.top === 'calc(100% + 10px)';
+        mobileMenu.style.top = menuClosed ? 'calc(100% + 10px)' : '100%';
+    });
+
+    // Close mobile menu when clicking anywhere outside of it
+    document.addEventListener('click', function (event) {
+        if (!mobileMenu.contains(event.target) && event.target !== menuIcon) {
+            mobileMenu.style.top = 'calc(100% + 10px)'; // Slide the menu back to close it
+        }
+    });
 document.addEventListener('DOMContentLoaded', function () {
     const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
 
