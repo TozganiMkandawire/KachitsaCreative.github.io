@@ -31,7 +31,20 @@
         }
 
         /* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: 480px) {
+        @media only screen and (max-width: 1000px) {
+    #about img.circular-image {
+        width: 100%; /* Set the image width to 100% of the container */
+        max-width: 300px; /* Limit the maximum width of the image */
+        height: auto; /* Maintain the aspect ratio */
+        border-radius: 50%; /* Keep the circular shape */
+    }
+
+    #about .about-content {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+@media only screen and (max-width: 1000px) {
     h1 {
         font-size: 24px; /* Adjust the font size for smaller screens */
         margin-bottom: 20px; /* Added margin to push content down */
@@ -269,7 +282,7 @@ r        };
             transform: scale(1.1);
         }
         /* Responsive Styles */
-        @media only screen and (max-width: 480px) {
+        @media only screen and (max-width: 1000px) {
             header {
                 padding: 5px;
                 flex-direction: column;
@@ -376,7 +389,7 @@ r        };
 }
 
 /* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1000px) {
     /* ... (Existing styles for smaller screens) */
 
     /* Display the menu icon on smaller screens */
@@ -386,7 +399,7 @@ r        };
 
     /* Adjust the order and margin for the navigation links */
     nav a {
-        padding: 14px 20px;
+        padding: 16px 26px;
         order: 1; /* Move the links to the left */
         margin-left: 10px; /* Add some margin to the left */
     }
