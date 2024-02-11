@@ -435,6 +435,40 @@ r        };
         opacity: 0.7;
     }
 }
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially position it off-screen to the right */
+    height: 100%;
+    width: 70%; /* Adjust the width of the menu as needed */
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+    z-index: 3;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+}
+
+.menu-icon {
+    display: none; /* Initially hide the menu icon */
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Additional styles for smaller screens (phones) */
+@media only screen and (max-width: 480px) {
+    /* Display the menu icon on smaller screens */
+    .menu-icon {
+        display: block;
+    }
+}
 
     </style>
 </head>
@@ -443,16 +477,17 @@ r        };
     <div class="container">
     <header>
         <h1>KachitsaCreatives</h1>
-        <div class="app__navbar">
-            <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
-            <nav id="nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+        <div class="menu-icon" onclick="toggleMobileMenu()">&#9776;</div>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</div>
+        
     </header>
+    
+
     <section id="home" class="home-content">
         <div class="container">
             <h1>Hey, my name is <span style="font-size: 2.0em; font-weight: bold; font-family: montserrat;"><br>Wonderful<br>Kachitsa</span></h1>
@@ -586,9 +621,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.right = mobileMenu.style.right === '0%' || mobileMenu.style.right === '' ? '-100%' : '0%';
+}
+
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    if (!mobileMenu.contains(event.target) && event.target !== menuIcon) {
+        mobileMenu.style.right = '-100%';
+    }
+});
 
 
     </script>
 </body>
 
 </html>
+
