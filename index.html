@@ -2,642 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kachitsa Creatives - Photography Portfolio</title>
-    <style>
-        /* Common styling for the entire website */
-        body {
-            font-family: montserrat;
-            background-color: #f0f8ff; /* light blue */
-            color: #000000; /* black */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.25);/* Semi-transparent blue */
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0; /* Ensure the menu is on top */
-            transition: background-color 0.5s; /* Smooth transition for background color */
-            backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 2;
-        }
+    <meta charset="utf-8">
+    <title>blossom website</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        /* Additional styles for smaller screens (phones) */
-        @media only screen and (max-width: 480px) {
-    #about img.circular-image {
-        width: 100%; /* Set the image width to 100% of the container */
-        max-width: 300px; /* Limit the maximum width of the image */
-        height: auto; /* Maintain the aspect ratio */
-        border-radius: 50%; /* Keep the circular shape */
-    }
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    #about .about-content {
-        text-align: center; /* Center text on smaller screens */
-    }
-}
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-@media only screen and (max-width: 480px) {
-    h1 {
-        font-size: 24px; /* Adjust the font size for smaller screens */
-        margin-bottom: 20px; /* Added margin to push content down */
-    }
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    h2, h3, p {
-        font-size: 16px; /* Adjusted font size for smaller screens */
-    }
-}
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-        h1 {
-            font-family: montserrat;
-            margin-right: auto;
-            margin-left: 10px;
-            font-size: 30m; /* Adjust the font size as needed */
-            font-weight: bold;
-            font-style: italic;
-        }
-        h2 {
-            font-family: montserrat;
-            font-size: 40px;
-            font-style: italic;
-        }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        h3 {
-            font-family: montserrat;
-            font-size: 30px;
-        }
-        .app__navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: right;
-            padding: 1rem 2rem;
-        }
-        nav {
-            text-align: right;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-        nav a {
-            display: inline-block;
-            color: black; 
-            text-align: right;
-            padding: 14px 30px; /* increased padding for more space */
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 22px; /* slightly larger font size */
-            margin: 0 50px; /* increased margin for extra spacing */
-        }
-        nav a:hover {
-            background-color: #7ab8f5; /* lighter blue */
-            color: #ffffff; /* white */
-        }
-        .menu-icon {
-            display: none; /* Initially hide the menu icon */
-            font-size: 25px;
-            cursor: pointer;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-            margin-top: 80px; /* Adjusted to account for the fixed header */
-        }
-        .home-content {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            height: 80vh;
-            text-align: left;
-        }
-        .home-content h1 {
-            font-size: 2em; /* Adjusted font size for smaller screens */
-            font-family: montserrat;
-            margin-top: 20px; /* Adjusted margin for better visibility */
-        }
-        .home-content img {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        .gallery {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-        .gallery img {
-            margin: 10px;
-            border: 3px solid #87ceeb; /* sky blue */
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        p {
-            font-family: montserrat;
-            font-size: 25px;
-        }
-       
-#about .container {
-    max-width: 800px; /* Adjust the max-width as needed */
-    margin: auto;
-    padding: 20px;
-    background-color: #fff; /* Background color for the container */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-#about .about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px; /* Adjusted margin for better spacing */
-}
-
-#about img {
-    width: px; /* Adjusted width as needed */
-    height: 300px;
-    border-radius: 100%;
-    object-fit: cover;
-}
-
-#about p {
-    font-size: 20px;
-    color: #333;
-    margin-left: 20px; /* Adjusted margin for better spacing */
-}
-
-
-
-
-        /* Contact form styling */
-        form {
-            max-width: 600px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 18px;
-            color: #777;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"] {
-            background-color: #77afc5; /* sky blue */
-            color: #ffffff; /* white */
-            cursor: pointer;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #7ab8f5; /* lighter blue */
-        }
-        .contact-info {
-            max-width: 600px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            color: #333;
-            margin: 0;
-        }
-
-        .contact-info a {
-            color: #77afc5; /* sky blue */
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #77afc5; /* sky blue */
-            color: #ffffff; /* white */
-            width: 100%;
-            bottom: 0;
-r        };
-
-        footer p {
-            font-size: 14px; /* Adjust the font size as needed */
-            margin: 0;
-        }
-        
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
-            cursor: pointer;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        /* Responsive Styles */
-        @media only screen and (max-width: 480px) {
-            header {
-                padding: 5px;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin-left: 5px;
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: center;
-                display: none; /* Hide the navigation links on smaller screens by default */
-            }
-
-            nav a {
-                padding: 10px;
-                margin: 5px;
-                width: 100%;
-                display: block;
-            }
-
-            .menu-icon {
-                display: block; /* Display the menu icon on smaller screens */
-            }
-
-            .home-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .home-content img {
-                width: 80%;
-                height: auto;
-                margin-top: 20px;
-            }
-
-            .gallery img {
-                width: 80%;
-                height: auto;
-                margin: 10px 0;
-            }
-
-            h2, h3, p {
-                font-size: 18px; /* Adjusted font size for smaller screens */
-            }
-
-            .contact-info, form {
-                max-width: 100%;
-            }
-
-            input[type="submit"] {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-
-            footer {
-                position: relative;
-                bottom: auto;
-            }
-        }
-        .circular-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 100%; /* Use 50% to create a circular shape */
-    object-fit: cover; /* Ensures the image covers the entire circular container */
-}
-/*sliding-in menu */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Initially position it off-screen to the right */
-    height: 100%;
-    width: 70%; /* Adjust the width of the menu as needed */
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease; /* Smooth transition for sliding effect */
-    z-index: 3;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    color: #000000;
-}
-
-.mobile-menu a:hover {
-    background-color: #7ab8f5; /* lighter blue */
-    color: #ffffff; /* white */
-}
-
-/* Adjust the padding and font size for the menu icon */
-.menu-icon {
-    display: none;
-    font-size: 25px;
-    cursor: pointer;
-    order: 2; /* Change the order to move it to the right */
-    margin-right: 10px; /* Add some margin to the right */
-}
-
-/* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: spx) {
-    /* ... (Existing styles for smaller screens) */
-
-    /* Display the menu icon on smaller screens */
-    .menu-icon {
-        display: block;
-    }
-
-    /* Adjust the order and margin for the navigation links */
-    
-}
-
-.scroll-down-indicator {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.scroll-down-arrow {
-    width: 24px;
-    height: 24px;
-    border: solid #062d44;
-    border-width: 0 6px 6px 0;
-    transform: rotate(45deg);
-}
-
-.scroll-down-arrow {
-    width: 24px;
-    height: 24px;
-    border: solid #114d9b;
-    border-width: 0 6px 6px 0;
-    transform: rotate(45deg);
-    animation: blink 1s infinite alternate; /* Added animation */
-}
-
-@keyframes blink {
-    from {
-        opacity: 0.10;
-    }
-    to {
-        opacity: 0.7;
-    }
-}
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Initially position it off-screen to the right */
-    height: 100%;
-    width: 70%; /* Adjust the width of the menu as needed */
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease; /* Smooth transition for sliding effect */
-    z-index: 3;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    color: #000000;
-}
-
-.menu-icon {
-    display: none; /* Initially hide the menu icon */
-    font-size: 25px;
-    cursor: pointer;
-}
-
-/* Additional styles for smaller screens (phones) */
-@media only screen and (max-width: 480px) {
-    /* Display the menu icon on smaller screens */
-    .menu-icon {
-        display: block;
-    }
-}
-
-    </style>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-    <header>
-        <h1>KachitsaCreatives</h1>
-        <div class="menu-icon" onclick="toggleMobileMenu()">&#9776;</div>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</div>
-        
-    </header>
     
+    <!-- Spinner End -->
 
-    <section id="home" class="home-content">
-        <div class="container">
-            <h1>Hey, my name is <span style="font-size: 2.0em; font-weight: bold; font-family: montserrat;"><br>Wonderful<br>Kachitsa</span></h1>
-            <p>I am a photographer</p>
-        </div>
-      
-        <div class="overlay"></div>
-       
-        <div class="scroll-down-indicator">
-            <div class="scroll-down-arrow"></div>
-        </div>
-    </section>
-    
-    
-    <section id="about">
-        <div class="container">
-            <h2>About Wonderful Kachitsa</h2>
-            <div class="about-content">
-                <img src="w2.jpg" alt="Description" class="circular-image">
-                <p>I am a photographer who sees the world through a unique lens, my camera lens. Through my creative vision, I transform ordinary moments into extraordinary visual stories. Blending artistry with technical expertise, I turn each frame into a canvas, capturing the beauty, emotions, and narratives that unfold within the click of my shutter. For me, photography is a journey where every image tells a tale of passion, creativity, and a profound connection with the art. Join me on this adventure, where ordinary moments become extraordinary masterpieces, and the world is seen through my eyes as an artist behind the camera.</p>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5"> 
+            <img src="logo.png" alt="Logo" width="60" height="60" class="me-2"> <!-- Adjust width and height as needed -->
+            <span class="d-none d-lg-inline">Blossom Foundation</span> <!-- Text to display alongside logo -->
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">News</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
         </div>
-    </section>
+    </nav>
     
+           </div>
+    </nav>
+    <!-- Navbar End -->
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <h3>Wedding Photos</h3>
-        <div class="gallery">
-            <img src="p1.jpg" alt="Wedding Photo 1" width="300" height="200">
-            <img src="p2.jpg" alt="Wedding Photo 2" width="300" height="200">
-            <img src="p3.jpg" alt="Wedding Photo 3" width="300" height="200">
-        </div>
-        <h3>Outdoor Photoshoot</h3>
-        <div class="gallery">
-            <img src="p4.jpg" alt="Birthday Photo 1" width="300" height="200">
-            <img src="p5.jpg" alt="Birthday Photo 2" width="300" height="200">
-            <img src="p6.jpg" alt="Birthday Photo 3" width="300" height="200">
-        </div>
-        <h3>Engagement Photos</h3>
-        <div class="gallery">
-            <img src="p7.jpg" alt="Engagement Photo 1" width="300" height="200">
-            <img src="p8.jpg" alt="Engagement Photo 2" width="300" height="200">
-            <img src="p9.jpg" alt="Engagement Photo 3" width="300" height="200">
-        </div>
-    </section>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="pic1.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"></h5>
+                                <h1 class="display-3 text-white animated slideInDown">blossom Foundation</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Unleah your full potential</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
     
-    <section id="contact">
-        <h2>Contact</h2>
-        <section class="contact-info">
-            <p>Contact Wonderful Kachitsa:</p>
-           <p>Phone: <a href="https://wa.me/265883096096" target="_blank">+265 883 09 60 96 (WhatsApp)</a></p>
-            <p>Email: <a href="mailto:kachitsaw1@gmail.com">kachitsaw1@gmail.com</a></p>
-        </section>
-        
-        
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</div>
-
-
-        <p>book a session today!</p>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <input type="submit" value="Send Message">
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2024 JoyTech Designs||Kachitsa Creatives</p>
-    </footer>
-</div>
-    <script>
-   
-function toggleNav() {
-    const nav = document.getElementById('nav');
-    nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const overlay = document.querySelector('.overlay');
-    const galleryImages = document.querySelectorAll('.gallery img');
-
-    galleryImages.forEach(function (image) {
-        image.addEventListener('click', function () {
-            overlay.style.display = 'flex';
-            const overlayImage = document.createElement('img');
-            overlayImage.src = this.src;
-            overlayImage.alt = this.alt;
-            overlay.appendChild(overlayImage);
-        });
-    });
-
-    overlay.addEventListener('click', function () {
-        overlay.style.display = 'none';
-        overlay.innerHTML = ''; // Clear the overlay content
-    });
-});
-
-        // JavaScript to handle scroll and update header background
-        // Modify the existing toggleNav function
-function toggleNav() {
-    const nav = document.getElementById('nav');
-    const mobileMenu = document.getElementById('mobileMenu');
     
-    if (window.innerWidth <= 600) {
-        mobileMenu.style.left = mobileMenu.style.left === '0%' || mobileMenu.style.left === '' ? '-100%' : '0%';
-    } else {
-        nav.style.display = nav.style.display === 'none' || nav.style.display === '' ? 'flex' : 'none';
-    }
-}
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <img class="img-fluid" src="pic2.jpg" alt="">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mzuzu, Malawi</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0883397287</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>blossomfoundation15@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Blossom Foundation</a>, All Right Reserved.
+                Designed By JoyTech Designs</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-document.addEventListener('DOMContentLoaded', function () {
-    const scrollDownIndicator = document.querySelector('.scroll-down-indicator');
 
-    scrollDownIndicator.addEventListener('click', function () {
-        const aboutSection = document.getElementById('about');
-        aboutSection.scrollIntoView({
-            behavior: 'smooth',
-        });
-    });
-});
-
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.style.right = mobileMenu.style.right === '0%' || mobileMenu.style.right === '' ? '-100%' : '0%';
-}
-
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.querySelector('.menu-icon');
-
-    if (!mobileMenu.contains(event.target) && event.target !== menuIcon) {
-        mobileMenu.style.right = '-100%';
-    }
-});
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
-
